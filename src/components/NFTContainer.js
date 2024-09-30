@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as SombreroMole } from "../images/sombrero-mole-3.svg";
+import { ReactComponent as SombreroMole } from "../images/sombrero-mole.svg";
 import { ReactComponent as CowboyMole } from "../images/cowboy-mole.svg";
 
 const NFTContainer = () => {
