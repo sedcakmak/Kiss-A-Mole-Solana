@@ -1,38 +1,394 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body {
+  background-image: url(/src/images/bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
+main {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+}
+
+.info-container {
+  float: left;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+}
+
+#play-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.ground {
+  display: inline-flex;
+  flex: 1 1 25%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+.dirt,
+.mole {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.dirt {
+  background-image: url(/src/images/delik.svg);
+  z-index: 2;
+  background-position: center 113%;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.mole {
+  background-image: url(/src/images/mole.svg);
+  transition: all 0.1s ease;
+  top: 100%;
+  background-position: bottom;
+  background-size: 90%;
+  z-index: 1;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.ground.active .mole {
+  top: 0;
+}
+
+.timer,
+.score {
+  display: flex;
+  justify-content: center;
+  font-family: "Lobster", cursive, "Old Standard TT", serif;
+  font-weight: bold;
+  padding: 0.5rem;
+  width: 15rem;
+  font-size: 2rem;
+  border-radius: 8px;
+  background-color: white;
+}
+.timer {
+  border: 3px solid #fbd20a;
+  box-shadow: inset 0px 0px 2px 2px rgba(251, 210, 10, 1);
+  background: linear-gradient(
+    135deg,
+    rgba(249, 138, 159, 1) 0%,
+    rgba(251, 210, 10, 1) 100%
+  );
+}
+
+.svg-info {
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.score {
+  border: 3px solid #f98a9f;
+  box-shadow: inset 0px 0px 2px 2px #cb1f60;
+  background: linear-gradient(
+    135deg,
+    rgba(251, 210, 10, 1) 0%,
+    rgba(249, 138, 159, 1) 100%
+  );
+}
+
+.best-score {
+  border: 3px solid #fbd20a;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: inset 0px 0px 2px 2px rgba(251, 210, 10, 1);
+  font-family: "Lobster", cursive, "Old Standard TT", serif;
+  font-size: 32px;
+  font-weight: bold;
+  background: url(/src/images/smack.svg),
+    linear-gradient(
+      135deg,
+      rgba(249, 138, 159, 1) 0%,
+      rgba(251, 210, 10, 1) 100%
+    );
+  background-position: 5% 100%, 90% 100%;
+  background-repeat: no-repeat, no-repeat;
+  text-align: center;
+  padding-left: 3rem;
+}
+
+.popup {
+  transform: scale(1);
+  -webkit-animation: popupAnim 0.2s backwards;
+  animation: popupAnim 0.2s backwards;
+  transition: all 0.2s;
+}
+
+@-webkit-keyframes popupAnim {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(2);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@keyframes popupAnim {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(2);
+  }
+}
+
+.nft-container {
+  float: right;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 1rem;
+}
+
+.nft-image {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.nft-image:hover {
+  transform: scale(1.1);
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #1a1901;
+  border-radius: 8px;
+  margin: auto;
+}
+
+.start-button {
+  border: 3px solid #7a7f43;
+  padding: 1rem 2rem 1rem 1rem;
+  box-shadow: inset 0px 0px 2px 2px #7a7f43;
+  font-family: "Lobster", cursive, "Old Standard TT", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  background: linear-gradient(
+    135deg,
+    rgba(251, 210, 10, 1) 0%,
+    rgba(249, 138, 159, 1) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.start-button:focus {
+  color: white;
+}
+.start-button:hover {
+  border: 3px solid rgba(251, 210, 10, 1);
 }
 
-@keyframes App-logo-spin {
+.connect-wallet-button {
+  margin-left: auto;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-animation-name: animate-opacity;
+  animation-name: animate-opacity;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 138, 159, 1) 0%,
+    rgba(251, 210, 10, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-body p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.modal-close-btn {
+  color: #000;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 8px;
+  width: 8rem;
+  border: 1px solid white;
+  box-shadow: inset 0px 0px 2px 2px #7a7f43;
+  margin-bottom: 1.5rem;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  cursor: pointer;
+  border: 1px solid rgba(249, 138, 159, 1);
+  box-shadow: inset 0px 0px 2px 2px rgba(249, 138, 159, 1);
+}
+
+/* Modal Animation */
+@-webkit-keyframes animate-opacity {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Wallet Button */
+
+#wallet-btn {
+  border: 3px solid #7a7f43;
+  text-align: center;
+  padding: 1rem 2rem 1rem 1rem;
+  box-shadow: inset 0px 0px 2px 2px #7a7f43;
+  font-family: "Lobster", cursive, "Old Standard TT", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+#wallet-btn:hover {
+  border: 3px solid rgba(251, 210, 10, 1);
+}
+
+/* Media Screen */
+
+@media screen and (max-width: 1000px) {
+  body {
+    background-size: auto;
+  }
+
+  .board {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    height: 25%;
+  }
+
+  .button-wrapper,
+  .timer,
+  .score,
+  .best-score {
+    width: 50%;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+  }
+
+  .button-wrapper {
+    height: 100%;
+  }
+  .start-button,
+  .wallet-btn,
+  .score,
+  .timer,
+  .best-score {
+    font-size: 20px;
+    height: 100%;
+  }
+
+  #play-area {
+    margin-top: 6rem;
+  }
+  .ground {
+    flex: 1 1 35%;
+  }
+  body {
+    background-position: 15% 0%;
+  }
+
+  .board {
+    height: 20%;
   }
 }

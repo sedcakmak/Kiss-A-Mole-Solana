@@ -1,27 +1,85 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import PlayArea from "./PlayArea";
-import Modal from "./Modal";
-import ConnectWalletButton from "./ConnectWalletButton";
+import Timer from "./components/Timer";
+import Score from "./components/Score";
+import Board from "./components/Board";
+import Modal from "./components/Modal";
+import NFTContainer from "./components/NFTContainer";
+import ConnectWalletButton from "./components/ConnectWalletButton";
 import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(30);
+  const [timeUp, setTimeUp] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [gameStarted, setGameStarted] = useState(false);
+
+  useEffect(() => {
+    if (timeLeft <= 0) {
+      setTimeUp(true);
+      setShowModal(true);
+    }
+  }, [timeLeft]);
+
+  const startGame = () => {
+    setCount(0);
+    setTimeLeft(30);
+    setTimeUp(false);
+    setShowModal(false);
+    setGameStarted(true);
+
+    const timerInterval = setInterval(() => {
+      setTimeLeft((prev) => {
+        if (prev <= 1) {
+          clearInterval(timerInterval);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+  };
+
+  const resetGame = () => {
+    setCount(0);
+    setTimeLeft(30);
+    setTimeUp(false);
+    setShowModal(false);
+    setGameStarted(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="game-container">
+        <div className="button-wrapper">
+          <button
+            className="start-button"
+            onClick={startGame}
+          >
+            Start Game
+          </button>
+        </div>
+        <ConnectWalletButton className="connect-wallet-button" />
+      </div>
+      <div className="info-container">
+        <Timer timeLeft={timeLeft} />
+        <Score count={count} />
+      </div>
+      <div className="board">
+        <Board
+          count={count}
+          setCount={setCount}
+          timeUp={timeUp}
+          gameStarted={gameStarted}
+        />
+        {showModal && (
+          <Modal
+            count={count}
+            onClose={resetGame}
+          />
+        )}
+      </div>
+      <NFTContainer />
+    </>
   );
 }
 
