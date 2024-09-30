@@ -1,3 +1,8 @@
+import React, { useState, useEffect } from "react";
+import Header from "./Header";
+import PlayArea from "./PlayArea";
+import Modal from "./Modal";
+import ConnectWalletButton from "./ConnectWalletButton";
 import "./App.css";
 
 function App() {
