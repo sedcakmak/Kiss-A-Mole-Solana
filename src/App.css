@@ -232,7 +232,18 @@ main {
 }
 
 .connect-wallet-button {
-  margin-left: auto;
+  /* margin-left: auto; */
+  border: 3px solid pink !important;
+}
+
+.wallet-adapter-button-trigger {
+  background-color: #ff5722 !important; /* Change to your desired background color */
+  color: black !important; /* Change to your desired text color */
+  border-radius: 8px; /* Optional: Customize the border radius */
+}
+
+.wallet-adapter-button-trigger:hover {
+  background-color: #2c2b2b; /* Optional: Change hover effect color */
 }
 
 /* MODAL */
