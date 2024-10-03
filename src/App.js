@@ -4,7 +4,6 @@ import Score from "./components/Score";
 import Board from "./components/Board";
 import Modal from "./components/Modal";
 import NFTContainer from "./components/NFTContainer";
-// import ConnectWalletButton from "./components/ConnectWalletButton";
 
 import "./App.css";
 

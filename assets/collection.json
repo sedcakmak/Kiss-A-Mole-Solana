@@ -1,0 +1,20 @@
+{
+  "name": "Kiss a Mole Collection",
+  "description": "This is the Kiss a Mole NFT Collection featuring unique moles with different hats.",
+  "image": "collection.jpg",
+  "external_url": "https://bafkreidc4ya5a7p2sbwq7pyctjaytj4duycrf567c34hgwmavpau2x4v6y.ipfs.w3s.link",
+
+  "properties": {
+    "files": [
+      {
+        "uri": "https://bafkreibzimflkyjpaoibxb256chb3br5ermhgxubxwsowinvync3gb557q.ipfs.w3s.link",
+        "type": "image/png"
+      },
+      {
+        "uri": "https://bafybeicgd3rfbhzzrmdrumpaibx6bq63d4txcvamcebcyzaiynbjeav2f4.ipfs.w3s.link",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "program": {
+    "candyMachine": "DWQJiJNsefZc1EZaZqamjYhBruDz62st1wqvazg7n1BP",
+    "candyGuard": "EFoSB8KpcZdYrWxPeKZtBBskMcrBJi5XiVyjsnqzzjyq",
+    "candyMachineCreator": "Deav4jhJxxEuLWinkz1KtZ3G8JAwEEAASGwj62GZACBH",
+    "collectionMint": "D2G3HypsiK11WrBPkZX6ASJWCkaa4KfhaLM4Uuej8CtK"
+  },
+  "items": {
+    "-1": {
+      "name": "Kiss a Mole Collection",
+      "image_hash": "62e601d07dfa906d0fbf029a4189a783a60512f7df16f8735980abc14d5f95f6",
+      "image_link": "https://gateway.irys.xyz/Dc5dBE2B9vKds3GvCtccoKZfCceHvC1ieG2E7WzrYMF8?ext=jpg",
+      "metadata_hash": "f8ef405b2ae9802b223b0b3b525df9f28cb981b66c8fefad8ace0a90589ff3a7",
+      "metadata_link": "https://gateway.irys.xyz/59ySZjTG6KMutn9F4LjWAqyZQ6mrXUm6upYMP7FwC9xL",
+      "onChain": true
+    },
+    "0": {
+      "name": "Cowboy Mole NFT",
+      "image_hash": "33e3819c42692cd7700a5c663ef2c86672fdaed7142c73c0fc742a12a99801a5",
+      "image_link": "https://bafkreibzimflkyjpaoibxb256chb3br5ermhgxubxwsowinvync3gb557q.ipfs.w3s.link/",
+      "metadata_hash": "6ea4c28dfdf55d9767e19eaed56169c9abba7871e0704b690d0cdd967f026f29",
+      "metadata_link": "https://gateway.irys.xyz/3s6GTgEjQ211JJJ7hv1dgcSugwGkQK352DvUxM5brSzR",
+      "onChain": true
+    },
+    "1": {
+      "name": "Sombrero Mole NFT",
+      "image_hash": "527547691fe7031a738b4c9afee0b710ee472a07e43a5eeab6f2968367ab013a",
+      "image_link": "https://bafybeicgd3rfbhzzrmdrumpaibx6bq63d4txcvamcebcyzaiynbjeav2f4.ipfs.w3s.link/",
+      "metadata_hash": "51fc36068262b096e9697ddd8f778999714f944082c8822e63aaf2c3fbe10b68",
+      "metadata_link": "https://gateway.irys.xyz/5W4g15doBuaKHutteNvsv3ZRjiJrY8So2nUr5x8edpB6",
+      "onChain": true
+    }
+  }
+}
