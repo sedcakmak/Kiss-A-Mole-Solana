@@ -1,0 +1,21 @@
+{
+  "name": "Sombrero Mole NFT",
+  "symbol": "KAM",
+  "description": "A mole with a sombrero from Kiss a Mole game",
+  "image": "https://bafybeicgd3rfbhzzrmdrumpaibx6bq63d4txcvamcebcyzaiynbjeav2f4.ipfs.w3s.link/",
+  "attributes": [
+    {
+      "trait_type": "Hat",
+      "value": "Sombrero"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://bafybeicgd3rfbhzzrmdrumpaibx6bq63d4txcvamcebcyzaiynbjeav2f4.ipfs.w3s.link/",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

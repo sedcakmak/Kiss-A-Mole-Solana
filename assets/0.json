@@ -1,0 +1,21 @@
+{
+  "name": "Cowboy Mole NFT",
+  "symbol": "KAM",
+  "description": "A mole with a cowboy hat from Kiss a Mole game",
+  "image": "https://bafkreibzimflkyjpaoibxb256chb3br5ermhgxubxwsowinvync3gb557q.ipfs.w3s.link/",
+  "attributes": [
+    {
+      "trait_type": "Hat",
+      "value": "Cowboy"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://bafkreibzimflkyjpaoibxb256chb3br5ermhgxubxwsowinvync3gb557q.ipfs.w3s.link/",
+        "type": "image/png"
+      }
+    ],
+    "category": "image"
+  }
+}

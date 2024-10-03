@@ -1,0 +1,10 @@
+[
+  {
+    "path": "assets\\0.json",
+    "error": "missing field `properties` at line 12 column 1"
+  },
+  {
+    "path": "assets\\1.json",
+    "error": "missing field `properties` at line 12 column 1"
+  }
+]
